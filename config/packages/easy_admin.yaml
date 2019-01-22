@@ -1,0 +1,64 @@
+easy_admin:
+  entities:
+    User:
+      class: App\Entity\User
+      label: 'User'
+      list:
+        title: '%%entity_label%% listing'
+#ovveride tab
+      form:
+        fields:
+        - { type: 'tab' , label: 'Basic Information', icon : 'fa fa-user', css_class: 'w-100'}
+        - email
+        - username
+        - { type: 'tab', label: 'Contact Information', icon: 'phone', css_class: 'w-100'}
+        - age
+        - bulletin
+
+  #override  section and group
+      #      edit:
+      #        title:  'Edit User'
+      #        form_options: { validation_groups: ['Default','User'] }
+      #        fields:
+      #            - { type: 'group', label: 'User Details', column: 6}
+      #            - username
+      #            - { type: 'section', label: 'Email information' }
+      #            - email
+      #            - { type: 'group', label: 'Your information', icon: 'phone' }
+      #            - age
+
+  #override basic
+      #  - { property: 'username', icon: 'User' }
+      #  - { property: 'email', help: 'Your email adresss' }
+      #  - {property: 'age', help: 'your age must bigger than 20'}
+      # - { property: 'bulletin', type_options: { block_name: 'user_bulletin' } }
+
+    Article:
+      class: App\Entity\Article
+      label: Article
+      list:
+        title: '%%entity_label%% listing'
+
+        edit:
+          title:  'Edit Article'
+          form_options: { validation_groups: ['Default','Article'] }
+
+
+    Comment:
+      class: App\Entity\Comment
+      label: Comment
+      list:
+        title: '%%entity_label%% listing'
+
+        edit:
+          title:  'Edit Comments'
+          form_options: { validation_groups: ['Default','Comment'] }
+
+  site_name:
+    'BlogAdmin'
+  design:
+    brand_color: '#6151E2'
+    form_theme:
+    - '@EasyAdmin/form/bootstrap_4.html.twig'
+
+
