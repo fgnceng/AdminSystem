@@ -39,10 +39,7 @@ class ArticleController extends AbstractController
     {
         $this->isDebug = $isDebug;
 
-
     }
-
-
 
     /**
      * @Route("/", name="app_homepage")
